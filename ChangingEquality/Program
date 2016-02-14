@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StudentClassHW
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StudentHWClass studentClass1 = new StudentHWClass
+            {
+                Name = "Example1",
+                Gender = "Male",
+                Grade = "10"
+            };
+
+            StudentHWClass studentClass2 = new StudentHWClass
+            {
+                Name = "Example1",
+                Gender = "Male",
+                Grade = "10"
+            };
+
+            StudentHWClass studentClass3 = new StudentHWClass
+            {
+                Name = "Example2",
+                Gender = "Female",
+                Grade = "10"
+            };
+
+            var valueEqual1 = studentClass1.Equals(studentClass2);
+            Console.WriteLine(valueEqual1);
+
+            var valueEqual3 = studentClass1.Equals(studentClass3);
+            Console.WriteLine(valueEqual3);
+
+            var objEqual = Object.Equals(studentClass1, studentClass2);
+            Console.WriteLine(objEqual);
+
+            var objRefEqual = Object.ReferenceEquals(studentClass1, studentClass2);
+            Console.WriteLine(objRefEqual);
+
+            Console.ReadLine();
+
+        }
+    }
+}
