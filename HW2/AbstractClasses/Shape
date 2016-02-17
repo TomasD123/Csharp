@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbstractHW
+{
+    public abstract class Shape
+    {
+        public string Type { get; }
+
+        abstract public int CalculateArea();
+    }
+
+    public class Circle : Shape
+    {
+        double Radius;
+
+        public Circle(double r)
+        {
+            Radius = r;
+        }
+
+        public override int CalculateArea()
+        {
+            int Area = Convert.ToInt32((3.14) * Radius * Radius);
+            return Area;
+        }
+    }
+
+    public class Rectangle : Shape
+    {
+        int l;
+        int w;
+
+        public int Lenth(int Lenth)
+        {
+            return l = Lenth;
+        }
+
+        public int Width(int Width)
+        { 
+            return w = Width;
+        }
+
+        public override int CalculateArea()
+        {
+            int AreaR;
+            AreaR = l * w;
+            return AreaR;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Circle)
+            {
+                var objClass = (Circle)obj;
+                return this.Type == objClass.Type &&
+                       this.CalculateArea() == objClass.CalculateArea();
+            }
+            return false;
+        }
+        /*
+         public override string ToString()
+         {
+             return
+         } */
+    }
+}
