@@ -10,7 +10,7 @@ namespace AbstractHW
     {
         public string Type { get; }
 
-        abstract public int CalculateArea();
+        public abstract int CalculateArea();
     }
 
     public class Circle : Shape
@@ -58,6 +58,15 @@ namespace AbstractHW
                 var objClass = (Circle)obj;
                 return this.Type == objClass.Type &&
                        this.CalculateArea() == objClass.CalculateArea();
+            }
+            else if (obj is Rectangle)
+            {
+                if (obj is Rectangle)
+                {
+                    var objClass = (Rectangle)obj;
+                    return this.Type == objClass.Type &&
+                           this.CalculateArea() == objClass.CalculateArea();
+                }
             }
             return false;
         }
