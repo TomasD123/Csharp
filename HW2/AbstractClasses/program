@@ -17,10 +17,21 @@ namespace AbstractShapeHW
             Circle c2 = new Circle(10);
             Console.WriteLine("Area of the circle = {0}", c2.CalculateArea());
 
+           
+            Rectangle r1 = new Rectangle(2, 5);
+            Console.WriteLine("Area of rectangle is: {0}", r1.CalculateArea());
+
+            Rectangle r2 = new Rectangle(2, 5);
+            Console.WriteLine("Area of rectangle is: {0}", r2.CalculateArea());
+
             var valueEqual = c.Equals(c2);
+            var valueEqual2 = r1.Equals(r2);
+
             Console.WriteLine(valueEqual);
+            Console.WriteLine(valueEqual2);
 
             Console.ReadLine();
-        } 
+        }
+
    }
 }
