@@ -24,24 +24,38 @@ namespace AbstractHW
 
         public override int CalculateArea()
         {
-            int Area = Convert.ToInt32((3.14) * Radius * Radius);
+            int Area = Convert.ToInt32((Math.PI) * Radius * Radius);
             return Area;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Circle)
+            {
+                var objClass = (Circle)obj;
+                return this.Type == objClass.Type &&
+                       this.CalculateArea() == objClass.CalculateArea();
+            }
+            return false;
+        }
+        
+        public override string ToString()
+        {
+
+            string x = "The Radius is" + Radius;
+            return x;
+        } 
     }
 
     public class Rectangle : Shape
     {
-        int l;
-        int w;
+        private int l;
+        private int w;
 
-        public int Lenth(int Lenth)
+        public Rectangle(int l, int w)
         {
-            return l = Lenth;
-        }
-
-        public int Width(int Width)
-        { 
-            return w = Width;
+            this.l = l;
+            this.w = w;
         }
 
         public override int CalculateArea()
@@ -53,27 +67,22 @@ namespace AbstractHW
 
         public override bool Equals(object obj)
         {
-            if (obj is Circle)
+            if (obj is Rectangle)
             {
-                var objClass = (Circle)obj;
+                var objClass = (Rectangle)obj;
                 return this.Type == objClass.Type &&
                        this.CalculateArea() == objClass.CalculateArea();
             }
-            else if (obj is Rectangle)
-            {
-                if (obj is Rectangle)
-                {
-                    var objClass = (Rectangle)obj;
-                    return this.Type == objClass.Type &&
-                           this.CalculateArea() == objClass.CalculateArea();
-                }
-            }
             return false;
         }
-        /*
-         public override string ToString()
-         {
-             return
-         } */
+
+        public override string ToString()
+        {
+            
+            string x = "The Lenth is" + l;
+            x += "\nThe Width is " + w;
+            return x;
+        }
     }
 }
+
